@@ -15,6 +15,7 @@
 		ADCB92A2195646BD002E5C3A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADCB92A1195646BD002E5C3A /* Images.xcassets */; };
 		ADCB92AE195646BD002E5C3A /* SpothaucTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCB92AD195646BD002E5C3A /* SpothaucTests.m */; };
 		B1F612CC19588094000526F2 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F612CB19588094000526F2 /* LoginViewController.m */; };
+		B1F612CF195884B2000526F2 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F612CE195884B2000526F2 /* RegistrationViewController.m */; };
 		E54D5D77861445DEBEF424BE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A18C042C2E420FBC1BCE00 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,8 @@
 		ADCB92AD195646BD002E5C3A /* SpothaucTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpothaucTests.m; sourceTree = "<group>"; };
 		B1F612CA19588094000526F2 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		B1F612CB19588094000526F2 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		B1F612CD195884B2000526F2 /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
+		B1F612CE195884B2000526F2 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
 		C0A18C042C2E420FBC1BCE00 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -105,6 +108,8 @@
 				ADCB9299195646BD002E5C3A /* FirstViewController.m */,
 				B1F612CA19588094000526F2 /* LoginViewController.h */,
 				B1F612CB19588094000526F2 /* LoginViewController.m */,
+				B1F612CD195884B2000526F2 /* RegistrationViewController.h */,
+				B1F612CE195884B2000526F2 /* RegistrationViewController.m */,
 				ADCB929B195646BD002E5C3A /* SecondViewController.h */,
 				ADCB929C195646BD002E5C3A /* SecondViewController.m */,
 				ADCB929E195646BD002E5C3A /* Main.storyboard */,
@@ -276,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADCB929D195646BD002E5C3A /* SecondViewController.m in Sources */,
+				B1F612CF195884B2000526F2 /* RegistrationViewController.m in Sources */,
 				ADCB9297195646BD002E5C3A /* AppDelegate.m in Sources */,
 				ADCB929A195646BD002E5C3A /* FirstViewController.m in Sources */,
 				ADCB9294195646BD002E5C3A /* main.m in Sources */,

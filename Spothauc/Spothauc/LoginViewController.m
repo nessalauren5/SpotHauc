@@ -7,12 +7,17 @@
 //
 
 #import "LoginViewController.h"
+#import <Parse/Parse.h>
+#import "AppDelegate.h"
+#import "RegistrationViewController.h"
 
 @interface LoginViewController ()
 
 @end
 
 @implementation LoginViewController
+@synthesize fbLogin;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -23,10 +28,49 @@
     return self;
 }
 
+-(IBAction)facebookRegistration:(id)sender{
+
+    
+    [PFFacebookUtils logInWithPermissions:@[@"public_profile",@"email",@"user_friends"] block:^(PFUser *user, NSError *error) {
+        if (!user) {
+            NSLog(@"Uh oh. The user cancelled the Facebook login.");
+        } else if (user.isNew) {
+            self.fbLogin = YES;
+            [self performSegueWithIdentifier:@"LogintoRegistration" sender:self];
+        } else {
+            NSLog(@"Existing User trying to log in through Facebook!");
+            if (![PFFacebookUtils isLinkedWithUser:user]) {
+                [PFFacebookUtils linkUser:user permissions:nil block:^(BOOL succeeded, NSError *error) {
+                    if (succeeded) {
+                        NSLog(@"Woohoo, user logged in with Facebook!");
+                    }
+                }];
+            }
+            else{
+                NSLog(@"Existing user was logged in!");
+            }
+            
+        }
+    }];
+
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"LogintoRegistration"]) {
+        RegistrationViewController* rVC = [segue destinationViewController];
+        rVC.fbUser = self.fbLogin;
+    }
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
