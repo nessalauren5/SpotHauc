@@ -14,6 +14,7 @@
 		ADCB92A0195646BD002E5C3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADCB929E195646BD002E5C3A /* Main.storyboard */; };
 		ADCB92A2195646BD002E5C3A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADCB92A1195646BD002E5C3A /* Images.xcassets */; };
 		ADCB92AE195646BD002E5C3A /* SpothaucTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCB92AD195646BD002E5C3A /* SpothaucTests.m */; };
+		B1F612CC19588094000526F2 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F612CB19588094000526F2 /* LoginViewController.m */; };
 		E54D5D77861445DEBEF424BE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A18C042C2E420FBC1BCE00 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,8 @@
 		ADCB92A7195646BD002E5C3A /* SpothaucTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpothaucTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADCB92AC195646BD002E5C3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADCB92AD195646BD002E5C3A /* SpothaucTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpothaucTests.m; sourceTree = "<group>"; };
+		B1F612CA19588094000526F2 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		B1F612CB19588094000526F2 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		C0A18C042C2E420FBC1BCE00 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -100,6 +103,8 @@
 				ADCB9296195646BD002E5C3A /* AppDelegate.m */,
 				ADCB9298195646BD002E5C3A /* FirstViewController.h */,
 				ADCB9299195646BD002E5C3A /* FirstViewController.m */,
+				B1F612CA19588094000526F2 /* LoginViewController.h */,
+				B1F612CB19588094000526F2 /* LoginViewController.m */,
 				ADCB929B195646BD002E5C3A /* SecondViewController.h */,
 				ADCB929C195646BD002E5C3A /* SecondViewController.m */,
 				ADCB929E195646BD002E5C3A /* Main.storyboard */,
@@ -186,6 +191,7 @@
 				TargetAttributes = {
 					ADCB928D195646BD002E5C3A = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = ZC6EXKUBV9;
 					};
 					ADCB92A6195646BD002E5C3A = {
 						CreatedOnToolsVersion = 6.0;
@@ -273,6 +279,7 @@
 				ADCB9297195646BD002E5C3A /* AppDelegate.m in Sources */,
 				ADCB929A195646BD002E5C3A /* FirstViewController.m in Sources */,
 				ADCB9294195646BD002E5C3A /* main.m in Sources */,
+				B1F612CC19588094000526F2 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,7 +347,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				METAL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -375,7 +382,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				METAL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -388,8 +395,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Spothauc/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -401,8 +409,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Spothauc/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

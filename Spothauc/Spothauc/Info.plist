@@ -28,6 +28,8 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>FacebookAppID</key>
+	<string>120521564783461</string>
 	<key>UIStatusBarTintParameters</key>
 	<dict>
 		<key>UINavigationBar</key>
@@ -38,5 +40,16 @@
 			<false/>
 		</dict>
 	</dict>
+	<key>FacebookDisplayName</key>
+	<string>SpotHauc</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb120521564783461</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>
