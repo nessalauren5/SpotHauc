@@ -23,6 +23,8 @@
                   clientKey:@"wJMNp4AJiwUeLUc5djDG6IDkhfO8ah506ow699Kd"];
     
     [PFFacebookUtils initializeFacebook];
+    
+   
     return YES;
 }
 

@@ -105,7 +105,13 @@
                     
                     [[PFUser currentUser] setObject:lastName
                                              forKey:@"lastName"];
-                    [[PFUser currentUser] saveInBackground];
+                    [[PFUser currentUser] saveEventually:^(BOOL succeeded, NSError *error) {
+                        if (!succeeded){
+                            NSLog(@"%@",error);
+                            NSLog(@"email address is already registered, please login to link your facebook account.");
+                        }
+
+                    }];
                     [self performSegueWithIdentifier:@"RegtoHome" sender:self];
                 } else {
                     NSString *errorString = [error userInfo][@"error"];

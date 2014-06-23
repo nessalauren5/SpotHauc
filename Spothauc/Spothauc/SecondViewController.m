@@ -7,14 +7,21 @@
 //
 
 #import "SecondViewController.h"
-
+#import <Parse/Parse.h>
 @interface SecondViewController ()
             
 
 @end
 
 @implementation SecondViewController
-            
+
+-(IBAction)facebookLink:(id)sender{
+}
+
+-(IBAction)logout:(id)sender{
+    [PFUser logOut];
+    //[[[UIApplication sharedApplication] delegate] window] setRootViewController:
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.

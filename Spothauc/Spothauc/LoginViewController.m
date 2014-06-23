@@ -73,9 +73,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    
-    
+    PFUser *currentUser = [PFUser currentUser];
+    if (currentUser) {
+        NSLog(@"Cached user was logged in!");
+        [self performSegueWithIdentifier:@"LogintoHome" sender:self];
+    }
     
     
 }
