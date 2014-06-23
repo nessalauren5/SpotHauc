@@ -18,7 +18,9 @@
 @synthesize email = _email;
 @synthesize first = _first;
 @synthesize last = _last;
+@synthesize gender = _gender;
 @synthesize fbUser;
+@synthesize message=_message;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -32,6 +34,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    if(self.fbUser){
+        [self.message setText:@"Choose a username: "];
+        [self.first setHidden:YES];
+        [self.last setHidden:YES];
+        [self.email setHidden:YES];
+        [self.gender setHidden:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,48 +55,65 @@
 }
 
 -(IBAction)registerUser:(id)sender{
+    if([self validate]){
     NSString *userName = [self.username text];
-    if([self validate] && self.fbUser){
-        [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-            if (!error) {
-                // Store the current user's Facebook ID on the user
-                [[PFUser currentUser] setObject:[result objectForKey:@"id"]
-                                         forKey:@"id"];
-                [[PFUser currentUser] setObject:[result objectForKey:@"first_name"]
-                                         forKey:@"firstName"];
-                
-                [[PFUser currentUser] setObject:[result objectForKey:@"last_name"]
-                                         forKey:@"lastName"];
-                
-                [[PFUser currentUser] setObject:[result objectForKey:@"gender"]
-                                         forKey:@"gender"];
+        if(self.fbUser){
+            [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                if (!error) {
+                    // Store the current user's Facebook ID on the user
+                    [[PFUser currentUser] setObject:[result objectForKey:@"id"]
+                                             forKey:@"id"];
+                    [[PFUser currentUser] setObject:[result objectForKey:@"first_name"]
+                                             forKey:@"firstName"];
+                    
+                    [[PFUser currentUser] setObject:[result objectForKey:@"last_name"]
+                                             forKey:@"lastName"];
+                    
+                    [[PFUser currentUser] setObject:[result objectForKey:@"gender"]
+                                             forKey:@"gender"];
 
-                [[PFUser currentUser] setObject:userName forKey:@"username"];
-                [[PFUser currentUser] setObject:[result objectForKey:@"email"]
-                                         forKey:@"email"];
-                [[PFUser currentUser] saveInBackground];
-            }
-        }];
-    }
-    else{
-//        NSString *emailAddress = [self.email text];
-//        NSString *firstName = [self.first text];
-//        NSString *lsstName = [self.last text];
-//        
-//        PFUser *user = [PFUser user];
-//        user.username = userName;
-//        user.password = @"my pass";
-//        user.email = emailAddress;
-//        
-//        [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//            if (!error) {
-//                // Hooray! Let them use the app now.
-//            } else {
-//                NSString *errorString = [error userInfo][@"error"];
-//                // Show the errorString somewhere and let the user try again.
-//            }
-//        }];
+                    [[PFUser currentUser] setObject:userName forKey:@"username"];
+                    [[PFUser currentUser] setObject:[result objectForKey:@"email"]
+                                             forKey:@"email"];
+                    [[PFUser currentUser] saveEventually:^(BOOL succeeded, NSError *error) {
+                        if (!succeeded){
+                            NSLog(@"%@",error);
+                            NSLog(@"email address is already registered, please login to link your facebook account.");
+                        }
+                    }];
+                    
+                    [self performSegueWithIdentifier:@"RegtoHome" sender:self];
+                }
+            }];
+        }
+        else{
+            NSString *emailAddress = [self.email text];
+            NSString *firstName = [self.first text];
+            NSString *lastName = [self.last text];
+            
+            PFUser *user = [PFUser user];
+            user.username = userName;
+            user.password = @"my pass";
+            user.email = emailAddress;
+           
+                    
+            [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (!error) {
+                    // Hooray! Let them use the app now.
+                    [[PFUser currentUser] setObject:firstName
+                                             forKey:@"firstName"];
+                    
+                    [[PFUser currentUser] setObject:lastName
+                                             forKey:@"lastName"];
+                    [[PFUser currentUser] saveInBackground];
+                    [self performSegueWithIdentifier:@"RegtoHome" sender:self];
+                } else {
+                    NSString *errorString = [error userInfo][@"error"];
+                    // Show the errorString somewhere and let the user try again.
+                }
+            }];
 
+        }
     }
 }
 /*

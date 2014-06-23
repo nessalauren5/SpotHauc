@@ -10,5 +10,7 @@
 
 @interface RegistrationViewController : UIViewController
 @property(weak,nonatomic) IBOutlet UITextField *username, *email, *first, *last;
+@property(weak, nonatomic)IBOutlet UISegmentedControl *gender;
+@property(weak,nonatomic) IBOutlet UILabel *message;
 @property BOOL fbUser;
 @end

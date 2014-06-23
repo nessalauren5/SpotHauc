@@ -37,22 +37,29 @@
         } else if (user.isNew) {
             self.fbLogin = YES;
             [self performSegueWithIdentifier:@"LogintoRegistration" sender:self];
-        } else {
+        }
+        else{
             NSLog(@"Existing User trying to log in through Facebook!");
             if (![PFFacebookUtils isLinkedWithUser:user]) {
                 [PFFacebookUtils linkUser:user permissions:nil block:^(BOOL succeeded, NSError *error) {
                     if (succeeded) {
                         NSLog(@"Woohoo, user logged in with Facebook!");
+                        [self performSegueWithIdentifier:@"LogintoHome" sender:self];
                     }
                 }];
             }
             else{
                 NSLog(@"Existing user was logged in!");
+                [self performSegueWithIdentifier:@"LogintoHome" sender:self];
             }
-            
+
         }
     }];
 
+}
+
+-(IBAction)emailRegistration:(id)sender{
+    [self performSegueWithIdentifier:@"LogintoRegistration" sender:self];
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

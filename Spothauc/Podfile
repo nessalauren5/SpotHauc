@@ -2,4 +2,4 @@
 platform :ios, "6.0"
 pod 'Facebook-iOS-SDK',       '~> 3.15.0'
 pod 'Parse' #Login via Facebook
-pod 'US2FormValidator', '~> 1.1.2' #form validation
+#pod 'US2FormValidator', '~> 1.1.2' #form validation

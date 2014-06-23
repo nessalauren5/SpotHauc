@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="9pv-A4-QxB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="77U-Nn-O79">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
         <capability name="Unknown constraint types" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller - First-->
+        <!--Login View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="LoginViewController" sceneMemberID="viewController">
@@ -40,6 +40,9 @@
                                 <state key="normal" title="Register With Email">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="emailRegistration:" destination="9pv-A4-QxB" eventType="touchUpInside" id="UoZ-Ld-s7m"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -49,16 +52,17 @@
                             <constraint firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailing" id="GCv-eZ-Lr1"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <navigationItem key="navigationItem" id="9J7-C3-4bk"/>
                     <connections>
-                        <segue destination="qta-5J-QSp" kind="modal" identifier="LogintoRegistration" id="Sny-Sg-H9u"/>
+                        <segue destination="qta-5J-QSp" kind="push" identifier="LogintoRegistration" id="Sny-Sg-H9u"/>
+                        <segue destination="49e-Tb-3d3" kind="modal" identifier="LogintoHome" id="1Ml-Gl-ofc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1538" y="990"/>
+            <point key="canvasLocation" x="2004" y="358"/>
         </scene>
-        <!--Registration View Controller-->
+        <!--Registration View Controller - Registration-->
         <scene sceneID="srj-RO-LS7">
             <objects>
                 <viewController storyboardIdentifier="RegistrationView" id="qta-5J-QSp" customClass="RegistrationViewController" sceneMemberID="viewController">
@@ -76,7 +80,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email Address" borderStyle="line" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bfA-Gr-JCL">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bfA-Gr-JCL">
                                 <rect key="frame" x="41" y="213" width="231" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -104,20 +108,38 @@
                                     <action selector="registerUser:" destination="qta-5J-QSp" eventType="touchUpInside" id="Ofj-Ue-mQf"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9h-ZL-jvS">
+                                <rect key="frame" x="41" y="111" width="231" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="UOQ-q6-rJY">
+                                <rect key="frame" x="40" y="242" width="233" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Male"/>
+                                </segments>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Oon-os-mgz"/>
+                    <navigationItem key="navigationItem" title="Registration" id="Oon-os-mgz"/>
                     <connections>
                         <outlet property="email" destination="bfA-Gr-JCL" id="2c7-vY-Xtw"/>
                         <outlet property="first" destination="nr6-wW-qjy" id="XAC-Lm-2WA"/>
+                        <outlet property="gender" destination="UOQ-q6-rJY" id="acR-aS-5vU"/>
                         <outlet property="last" destination="pH3-Sy-5IK" id="3TO-rc-xPS"/>
+                        <outlet property="message" destination="a9h-ZL-jvS" id="VBb-1Q-OjW"/>
                         <outlet property="username" destination="1qF-ZR-GAS" id="G7z-qO-bG6"/>
+                        <segue destination="49e-Tb-3d3" kind="modal" identifier="RegtoHome" id="Rox-WW-Mnw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CZ7-cr-9MP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1943" y="990"/>
+            <point key="canvasLocation" x="2469" y="990"/>
         </scene>
         <!--Second View Controller - Second-->
         <scene sceneID="wg7-f3-ORb">
@@ -166,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2922" y="658.5"/>
+            <point key="canvasLocation" x="3448" y="659"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -184,7 +206,26 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2339" y="990"/>
+            <point key="canvasLocation" x="2943" y="366"/>
+        </scene>
+        <!--Navigation Controller - First-->
+        <scene sceneID="dVi-9U-g5y">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="77U-Nn-O79" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yyk-7o-Mpd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="i37-Jl-U4x"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p3b-mG-8bZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1538" y="990"/>
         </scene>
     </scenes>
     <resources>
@@ -196,4 +237,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="Rox-WW-Mnw"/>
+    </inferredMetricsTieBreakers>
 </document>
