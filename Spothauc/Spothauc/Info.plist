@@ -7,7 +7,9 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.FWDLit.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>com.FWDLit.SpotHauc</string>
+	<key>BundleBackup</key>
+	<string>${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -18,8 +20,21 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb120521564783461</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>FacebookAppID</key>
+	<string>120521564783461</string>
+	<key>FacebookDisplayName</key>
+	<string>SpotHauc</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIMainStoryboardFile</key>
@@ -28,8 +43,6 @@
 	<array>
 		<string>armv7</string>
 	</array>
-	<key>FacebookAppID</key>
-	<string>120521564783461</string>
 	<key>UIStatusBarTintParameters</key>
 	<dict>
 		<key>UINavigationBar</key>
@@ -40,16 +53,5 @@
 			<false/>
 		</dict>
 	</dict>
-	<key>FacebookDisplayName</key>
-	<string>SpotHauc</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>fb120521564783461</string>
-			</array>
-		</dict>
-	</array>
 </dict>
 </plist>
