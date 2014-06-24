@@ -55,7 +55,7 @@
                     <navigationItem key="navigationItem" title="Spothauc" id="9J7-C3-4bk"/>
                     <connections>
                         <segue destination="qta-5J-QSp" kind="push" identifier="LogintoRegistration" id="Sny-Sg-H9u"/>
-                        <segue destination="49e-Tb-3d3" kind="modal" identifier="LogintoHome" id="1Ml-Gl-ofc"/>
+                        <segue destination="49e-Tb-3d3" kind="modal" identifier="LogintoHome" animates="NO" id="1Ml-Gl-ofc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -178,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3932" y="366"/>
+            <point key="canvasLocation" x="3994" y="366"/>
         </scene>
         <!--Second View Controller - Settings Page-->
         <scene sceneID="GkM-d7-qpr">
@@ -209,7 +209,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="logout:" destination="14r-Ix-wLk" eventType="touchUpInside" id="Rp6-mY-lgy"/>
+                                    <segue destination="1Nc-Je-Xy9" kind="unwind" unwindAction="unwindToRootVC:" id="RxT-dS-aFR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -218,6 +218,7 @@
                     <navigationItem key="navigationItem" title="Settings Page" id="oCb-XD-nUd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jjc-we-la0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="1Nc-Je-Xy9" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4428" y="366"/>
         </scene>

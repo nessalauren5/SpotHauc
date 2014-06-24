@@ -21,6 +21,9 @@
 @synthesize gender = _gender;
 @synthesize fbUser;
 @synthesize message=_message;
+
+NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -54,12 +57,26 @@
     return [self.email text] && [self.first text] && [self.last text] && [self.username text];
 }
 
+
+-(NSString *) randomStringWithLength: (int) len {
+    
+    NSMutableString *randomString = [NSMutableString stringWithCapacity: len];
+    
+    for (int i=0; i<len; i++) {
+        [randomString appendFormat: @"%C", [letters characterAtIndex: arc4random_uniform([letters length]) % [letters length]]];
+    }
+    
+    return randomString;
+}
+
 -(IBAction)registerUser:(id)sender{
     if([self validate]){
     NSString *userName = [self.username text];
         if(self.fbUser){
             [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
                 if (!error) {
+            
+                    [[PFUser currentUser] setPassword:[self randomStringWithLength:12]];
                     // Store the current user's Facebook ID on the user
                     [[PFUser currentUser] setObject:[result objectForKey:@"id"]
                                              forKey:@"id"];
@@ -75,10 +92,14 @@
                     [[PFUser currentUser] setObject:userName forKey:@"username"];
                     [[PFUser currentUser] setObject:[result objectForKey:@"email"]
                                              forKey:@"email"];
+                    
                     [[PFUser currentUser] saveEventually:^(BOOL succeeded, NSError *error) {
                         if (!succeeded){
                             NSLog(@"%@",error);
                             NSLog(@"email address is already registered, please login to link your facebook account.");
+                        }
+                        else{
+                            NSLog(@"Successfully saved!");
                         }
                     }];
                     

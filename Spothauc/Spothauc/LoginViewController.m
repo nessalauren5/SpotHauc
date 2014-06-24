@@ -28,6 +28,11 @@
     return self;
 }
 
+-(IBAction)unwindToRootVC:(UIStoryboardSegue *)segue
+{
+    [PFUser logOut];
+    // Nothing needed here.
+}
 -(IBAction)facebookRegistration:(id)sender{
 
     
