@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "ADCB928D195646BD002E5C3A"
-               BuildableName = "SpotHauc.temp_caseinsensitive_rename.app"
-               BlueprintName = "SpotHauc.temp_caseinsensitive_rename"
-               ReferencedContainer = "container:SpotHauc.xcodeproj">
+               BuildableName = "Spothauc.app"
+               BlueprintName = "Spothauc"
+               ReferencedContainer = "container:Spothauc.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "ADCB92A6195646BD002E5C3A"
-               BuildableName = "SpotHauc.temp_caseinsensitive_renameTests.xctest"
-               BlueprintName = "SpotHauc.temp_caseinsensitive_renameTests"
-               ReferencedContainer = "container:SpotHauc.xcodeproj">
+               BuildableName = "SpothaucTests.xctest"
+               BlueprintName = "SpothaucTests"
+               ReferencedContainer = "container:Spothauc.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "ADCB928D195646BD002E5C3A"
-            BuildableName = "SpotHauc.temp_caseinsensitive_rename.app"
-            BlueprintName = "SpotHauc.temp_caseinsensitive_rename"
-            ReferencedContainer = "container:SpotHauc.xcodeproj">
+            BuildableName = "Spothauc.app"
+            BlueprintName = "Spothauc"
+            ReferencedContainer = "container:Spothauc.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "ADCB928D195646BD002E5C3A"
-            BuildableName = "SpotHauc.temp_caseinsensitive_rename.app"
-            BlueprintName = "SpotHauc.temp_caseinsensitive_rename"
-            ReferencedContainer = "container:SpotHauc.xcodeproj">
+            BuildableName = "Spothauc.app"
+            BlueprintName = "Spothauc"
+            ReferencedContainer = "container:Spothauc.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "ADCB928D195646BD002E5C3A"
-            BuildableName = "SpotHauc.temp_caseinsensitive_rename.app"
-            BlueprintName = "SpotHauc.temp_caseinsensitive_rename"
-            ReferencedContainer = "container:SpotHauc.xcodeproj">
+            BuildableName = "Spothauc.app"
+            BlueprintName = "Spothauc"
+            ReferencedContainer = "container:Spothauc.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

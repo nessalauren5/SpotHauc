@@ -31,7 +31,7 @@
 
 /* Begin PBXFileReference section */
 		7984E42952CF4066B0F8337D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		ADCB928E195646BD002E5C3A /* SpotHauc.temp_caseinsensitive_rename.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotHauc.temp_caseinsensitive_rename.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADCB928E195646BD002E5C3A /* Spothauc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spothauc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADCB9292195646BD002E5C3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADCB9293195646BD002E5C3A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ADCB9295195646BD002E5C3A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -42,7 +42,7 @@
 		ADCB929C195646BD002E5C3A /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		ADCB929F195646BD002E5C3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ADCB92A1195646BD002E5C3A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		ADCB92A7195646BD002E5C3A /* SpotHauc.temp_caseinsensitive_renameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotHauc.temp_caseinsensitive_renameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADCB92A7195646BD002E5C3A /* SpothaucTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpothaucTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADCB92AC195646BD002E5C3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADCB92AD195646BD002E5C3A /* SpothaucTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpothaucTests.m; sourceTree = "<group>"; };
 		B1F612CA19588094000526F2 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -93,8 +93,8 @@
 		ADCB928F195646BD002E5C3A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				ADCB928E195646BD002E5C3A /* SpotHauc.temp_caseinsensitive_rename.app */,
-				ADCB92A7195646BD002E5C3A /* SpotHauc.temp_caseinsensitive_renameTests.xctest */,
+				ADCB928E195646BD002E5C3A /* Spothauc.app */,
+				ADCB92A7195646BD002E5C3A /* SpothaucTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,9 +148,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		ADCB928D195646BD002E5C3A /* SpotHauc.temp_caseinsensitive_rename */ = {
+		ADCB928D195646BD002E5C3A /* Spothauc */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ADCB92B1195646BD002E5C3A /* Build configuration list for PBXNativeTarget "SpotHauc.temp_caseinsensitive_rename" */;
+			buildConfigurationList = ADCB92B1195646BD002E5C3A /* Build configuration list for PBXNativeTarget "Spothauc" */;
 			buildPhases = (
 				FA0C22E223C74C00996A1A9C /* Check Pods Manifest.lock */,
 				ADCB928A195646BD002E5C3A /* Sources */,
@@ -162,14 +162,14 @@
 			);
 			dependencies = (
 			);
-			name = SpotHauc.temp_caseinsensitive_rename;
+			name = Spothauc;
 			productName = Spothauc;
-			productReference = ADCB928E195646BD002E5C3A /* SpotHauc.temp_caseinsensitive_rename.app */;
+			productReference = ADCB928E195646BD002E5C3A /* Spothauc.app */;
 			productType = "com.apple.product-type.application";
 		};
-		ADCB92A6195646BD002E5C3A /* SpotHauc.temp_caseinsensitive_renameTests */ = {
+		ADCB92A6195646BD002E5C3A /* SpothaucTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ADCB92B4195646BD002E5C3A /* Build configuration list for PBXNativeTarget "SpotHauc.temp_caseinsensitive_renameTests" */;
+			buildConfigurationList = ADCB92B4195646BD002E5C3A /* Build configuration list for PBXNativeTarget "SpothaucTests" */;
 			buildPhases = (
 				ADCB92A3195646BD002E5C3A /* Sources */,
 				ADCB92A4195646BD002E5C3A /* Frameworks */,
@@ -180,9 +180,9 @@
 			dependencies = (
 				ADCB92A9195646BD002E5C3A /* PBXTargetDependency */,
 			);
-			name = SpotHauc.temp_caseinsensitive_renameTests;
+			name = SpothaucTests;
 			productName = SpothaucTests;
-			productReference = ADCB92A7195646BD002E5C3A /* SpotHauc.temp_caseinsensitive_renameTests.xctest */;
+			productReference = ADCB92A7195646BD002E5C3A /* SpothaucTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -204,7 +204,7 @@
 					};
 				};
 			};
-			buildConfigurationList = ADCB9289195646BC002E5C3A /* Build configuration list for PBXProject "SpotHauc" */;
+			buildConfigurationList = ADCB9289195646BC002E5C3A /* Build configuration list for PBXProject "Spothauc" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -217,8 +217,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				ADCB928D195646BD002E5C3A /* SpotHauc.temp_caseinsensitive_rename */,
-				ADCB92A6195646BD002E5C3A /* SpotHauc.temp_caseinsensitive_renameTests */,
+				ADCB928D195646BD002E5C3A /* Spothauc */,
+				ADCB92A6195646BD002E5C3A /* SpothaucTests */,
 			);
 		};
 /* End PBXProject section */
@@ -302,7 +302,7 @@
 /* Begin PBXTargetDependency section */
 		ADCB92A9195646BD002E5C3A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = ADCB928D195646BD002E5C3A /* SpotHauc.temp_caseinsensitive_rename */;
+			target = ADCB928D195646BD002E5C3A /* Spothauc */;
 			targetProxy = ADCB92A8195646BD002E5C3A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -336,7 +336,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -378,7 +377,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -407,7 +405,7 @@
 				INFOPLIST_FILE = Spothauc/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = SpotHauc.temp_caseinsensitive_rename;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
@@ -421,7 +419,7 @@
 				INFOPLIST_FILE = Spothauc/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = SpotHauc.temp_caseinsensitive_rename;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -440,7 +438,7 @@
 				INFOPLIST_FILE = SpothaucTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = SpotHauc.temp_caseinsensitive_renameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Debug;
@@ -456,7 +454,7 @@
 				INFOPLIST_FILE = SpothaucTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = SpotHauc.temp_caseinsensitive_renameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Release;
@@ -464,7 +462,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		ADCB9289195646BC002E5C3A /* Build configuration list for PBXProject "SpotHauc" */ = {
+		ADCB9289195646BC002E5C3A /* Build configuration list for PBXProject "Spothauc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ADCB92AF195646BD002E5C3A /* Debug */,
@@ -473,7 +471,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ADCB92B1195646BD002E5C3A /* Build configuration list for PBXNativeTarget "SpotHauc.temp_caseinsensitive_rename" */ = {
+		ADCB92B1195646BD002E5C3A /* Build configuration list for PBXNativeTarget "Spothauc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ADCB92B2195646BD002E5C3A /* Debug */,
@@ -482,7 +480,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ADCB92B4195646BD002E5C3A /* Build configuration list for PBXNativeTarget "SpotHauc.temp_caseinsensitive_renameTests" */ = {
+		ADCB92B4195646BD002E5C3A /* Build configuration list for PBXNativeTarget "SpothaucTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ADCB92B5195646BD002E5C3A /* Debug */,

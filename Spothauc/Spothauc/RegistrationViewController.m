@@ -75,7 +75,7 @@ NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ012345
         if(self.fbUser){
             [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
                 if (!error) {
-            
+                    
                     [[PFUser currentUser] setPassword:[self randomStringWithLength:12]];
                     // Store the current user's Facebook ID on the user
                     [[PFUser currentUser] setObject:[result objectForKey:@"id"]
@@ -92,7 +92,6 @@ NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ012345
                     [[PFUser currentUser] setObject:userName forKey:@"username"];
                     [[PFUser currentUser] setObject:[result objectForKey:@"email"]
                                              forKey:@"email"];
-                    
                     [[PFUser currentUser] saveEventually:^(BOOL succeeded, NSError *error) {
                         if (!succeeded){
                             NSLog(@"%@",error);
