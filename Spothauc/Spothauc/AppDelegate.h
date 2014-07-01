@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AmazonS3Client.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
-
+@property (strong, nonatomic) AmazonS3Client *S3;
+@property (strong, nonatomic) AmazonCredentials *s3Credentials;
 @end
 

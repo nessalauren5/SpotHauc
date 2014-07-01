@@ -1,4 +1,49 @@
 PODS:
+  - AWSiOSSDK (1.7.1):
+    - AWSiOSSDK/AutoScaling
+    - AWSiOSSDK/CloudWatch
+    - AWSiOSSDK/DynamoDB
+    - AWSiOSSDK/EC2
+    - AWSiOSSDK/ElasticLoadBalancing
+    - AWSiOSSDK/Runtime
+    - AWSiOSSDK/S3
+    - AWSiOSSDK/SES
+    - AWSiOSSDK/SimpleDB
+    - AWSiOSSDK/SNS
+    - AWSiOSSDK/SQS
+    - AWSiOSSDK/STS
+  - AWSiOSSDK/AutoScaling (1.7.1):
+    - AWSiOSSDK/DynamoDB
+    - AWSiOSSDK/Runtime
+  - AWSiOSSDK/CloudWatch (1.7.1):
+    - AWSiOSSDK/DynamoDB
+    - AWSiOSSDK/Runtime
+  - AWSiOSSDK/DynamoDB (1.7.1):
+    - AWSiOSSDK/Runtime
+  - AWSiOSSDK/EC2 (1.7.1):
+    - AWSiOSSDK/DynamoDB
+    - AWSiOSSDK/Runtime
+  - AWSiOSSDK/ElasticLoadBalancing (1.7.1):
+    - AWSiOSSDK/DynamoDB
+    - AWSiOSSDK/Runtime
+  - AWSiOSSDK/Runtime (1.7.1)
+  - AWSiOSSDK/S3 (1.7.1):
+    - AWSiOSSDK/Runtime
+  - AWSiOSSDK/SES (1.7.1):
+    - AWSiOSSDK/DynamoDB
+    - AWSiOSSDK/Runtime
+  - AWSiOSSDK/SimpleDB (1.7.1):
+    - AWSiOSSDK/DynamoDB
+    - AWSiOSSDK/Runtime
+  - AWSiOSSDK/SNS (1.7.1):
+    - AWSiOSSDK/DynamoDB
+    - AWSiOSSDK/Runtime
+  - AWSiOSSDK/SQS (1.7.1):
+    - AWSiOSSDK/DynamoDB
+    - AWSiOSSDK/Runtime
+  - AWSiOSSDK/STS (1.7.1):
+    - AWSiOSSDK/DynamoDB
+    - AWSiOSSDK/Runtime
   - Bolts (1.1.0)
   - Facebook-iOS-SDK (3.15.0):
     - Bolts
@@ -6,10 +51,12 @@ PODS:
     - Facebook-iOS-SDK (~> 3.11)
 
 DEPENDENCIES:
+  - AWSiOSSDK (~> 1.7)
   - Facebook-iOS-SDK (~> 3.15.0)
   - Parse
 
 SPEC CHECKSUMS:
+  AWSiOSSDK: db382a716be4ce2b2022fa5f0da275c43648d0c7
   Bolts: 91c2af8eae1d44e1dd75946a5b0ae04a43ea43e4
   Facebook-iOS-SDK: d67a9aa373f28b581e00cefdfd5a1ab8f883ac14
   Parse: ffebaecaddd32cb52671010f81567c298ff93d04

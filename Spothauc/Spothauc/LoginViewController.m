@@ -34,7 +34,7 @@
     // Nothing needed here.
 }
 -(IBAction)facebookRegistration:(id)sender{
-
+    
     
     [PFFacebookUtils logInWithPermissions:@[@"public_profile",@"email",@"user_friends"] block:^(PFUser *user, NSError *error) {
         if (!user) {

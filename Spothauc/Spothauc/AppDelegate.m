@@ -9,13 +9,16 @@
 #import "AppDelegate.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import <Parse/Parse.h>
+
+
 @interface AppDelegate ()
             
 
 @end
 
 @implementation AppDelegate
-            
+@synthesize S3=_S3;
+@synthesize s3Credentials = _s3Credentials;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -25,8 +28,11 @@
     [PFFacebookUtils initializeFacebook];
     
     [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge|
-     UIRemoteNotificationTypeAlert|
-     UIRemoteNotificationTypeSound];
+     UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeSound];
+    
+    self.S3 = [[AmazonS3Client alloc] initWithAccessKey:@"AKIAJXQVA2XJ2536FH4Q"
+                                                     withSecretKey:@"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"];
+    self.s3Credentials =  [[AmazonCredentials alloc] initWithAccessKey:@"AKIAJXQVA2XJ2536FH4Q" withSecretKey:@"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"];
     
     return YES;
 }

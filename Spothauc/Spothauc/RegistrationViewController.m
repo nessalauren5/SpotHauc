@@ -9,6 +9,10 @@
 #import "RegistrationViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import <Parse/Parse.h>
+#import <S3PutObjectRequest.h>
+#import <S3PutObjectResponse.h>
+#import <S3GetPreSignedURLRequest.h>
+#import "AppDelegate.h"
 @interface RegistrationViewController ()
 
 @end
@@ -69,13 +73,14 @@ NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ012345
     return randomString;
 }
 
+
 -(IBAction)registerUser:(id)sender{
     if([self validate]){
     NSString *userName = [self.username text];
         if(self.fbUser){
-            [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+            
+            [FBRequestConnection startWithGraphPath:@"/me?fields=id,gender,first_name,last_name,picture,email" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
                 if (!error) {
-                    
                     [[PFUser currentUser] setPassword:[self randomStringWithLength:12]];
                     // Store the current user's Facebook ID on the user
                     [[PFUser currentUser] setObject:[result objectForKey:@"id"]
@@ -88,22 +93,46 @@ NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ012345
                     
                     [[PFUser currentUser] setObject:[result objectForKey:@"gender"]
                                              forKey:@"gender"];
-
+                    
                     [[PFUser currentUser] setObject:userName forKey:@"username"];
                     [[PFUser currentUser] setObject:[result objectForKey:@"email"]
                                              forKey:@"email"];
+                   
+                    //saving profile picture to S3
+                    NSString *pictureName = [NSString stringWithFormat:@"%@",userName];
+                    S3PutObjectRequest *por = [[S3PutObjectRequest alloc] initWithKey:pictureName inBucket:@"usr_imgs"];
+                    por.contentType = @"image/jpeg";
+                    NSMutableString *mutableURL = [[[[result objectForKey:@"picture"] objectForKey:@"data"] objectForKey:@"url"] mutableCopy];
+                    NSString *url = [mutableURL stringByReplacingOccurrencesOfString:@"p50x50" withString:@"p200x200"];
+                    NSData *data = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:url ]];
+                    por.data = data;
+                    AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
+                    S3PutObjectResponse *response = [delegate.S3 putObject:por];
+                    
+                    S3GetPreSignedURLRequest *gpsur = [[S3GetPreSignedURLRequest alloc] init];
+                    gpsur.key     = pictureName;
+                    gpsur.bucket  = @"usr_imgs";
+                    gpsur.credentials = delegate.s3Credentials;
+                    gpsur.expires = [NSDate dateWithTimeIntervalSinceNow:(NSTimeInterval)50000];
+                    NSURL *presigned = [delegate.S3 getPreSignedURL:gpsur];
+                    
+                    [[PFUser currentUser] setObject:presigned.absoluteString forKey:@"profile_url"];
+                    
                     [[PFUser currentUser] saveEventually:^(BOOL succeeded, NSError *error) {
                         if (!succeeded){
                             NSLog(@"%@",error);
                             NSLog(@"email address is already registered, please login to link your facebook account.");
                         }
+                        
                         else{
-                            NSLog(@"Successfully saved!");
+                            [self performSegueWithIdentifier:@"RegtoHome" sender:self];
+                                                        NSLog(@"Successfully saved!");
                         }
                     }];
                     
                     [self performSegueWithIdentifier:@"RegtoHome" sender:self];
                 }
+
             }];
         }
         else{
